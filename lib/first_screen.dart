@@ -17,7 +17,9 @@ class FirstSceen extends StatelessWidget {
               child: const Text('Go To Second Screen'),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/secondScreenWithData', arguments: 'Hello im from first screen');
+              },
               child: const Text('Navigation with Data'),
             ),
             ElevatedButton(
