@@ -4,7 +4,7 @@ class SecondScreenWithData extends StatelessWidget{
 
   final String data;
 
-  SecondScreenWithData({required this.data});
+  SecondScreenWithData(this.data);
 
   @override
   Widget build(BuildContext context) {

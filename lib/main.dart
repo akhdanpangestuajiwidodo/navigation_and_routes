@@ -1,5 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:navigation_and_route/first_screen.dart';
+import 'package:navigation_and_route/replacement_screen.dart';
+import 'package:navigation_and_route/return_data_screen.dart';
+import 'package:navigation_and_route/second_screen.dart';
+import 'package:navigation_and_route/second_screen_with_data.dart';
+
+import 'another_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -16,7 +22,15 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: FirstSceen(),
+      initialRoute: '/',
+      routes: {
+        '/': (context) => FirstSceen(),
+        '/secondScreen': (context) => SecondScreen(),
+        '/secondScreenWithData': (context) => SecondScreenWithData(ModalRoute.of(context)?.settings.arguments as String),
+        'returnData': (context) => ReturnDataScreen(),
+        '/replacementScreen': (context) => ReplacementScreen(),
+        '/anotherScreen': (context) => AnotherScreen(),
+      },
     );
   }
 }
