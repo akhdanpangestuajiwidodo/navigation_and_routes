@@ -31,7 +31,9 @@ class FirstSceen extends StatelessWidget {
               child: const Text('Return Data from another Screen'),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                Navigator.pushNamed(context, '/replacementScreen');
+              },
               child: const Text('Replace Screen'),
             ),
           ],
