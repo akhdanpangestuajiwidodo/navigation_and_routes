@@ -23,7 +23,11 @@ class FirstSceen extends StatelessWidget {
               child: const Text('Navigation with Data'),
             ),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () async {
+                final result = await Navigator.pushNamed(context, '/returnData');
+                SnackBar snackBar = SnackBar(content: Text('${result}'));
+                ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              },
               child: const Text('Return Data from another Screen'),
             ),
             ElevatedButton(
